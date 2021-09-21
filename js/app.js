@@ -17,6 +17,7 @@
  * Define Global Variables
  * 
 */
+var sectionsNum = document.querySelectorAll("section");
 
 
 /**
