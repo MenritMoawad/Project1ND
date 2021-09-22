@@ -36,6 +36,9 @@ for (let i = 0; i < sections.length; i++) {
 navBar.appendChild(fragment);
 
 window.addEventListener('scroll',toggleActiveState);
+
+const listItems = document.querySelector("#navbar__list").children; // put list items in an array to change the styling
+
 function toggleActiveState() {
     // let sec1 = sections[0];
     // let port1 = sec1.getBoundingClientRect();
@@ -48,7 +51,6 @@ function toggleActiveState() {
     // {
     //     sec1.style.backgroundColor = "";
     // }
-    const listItems = document.querySelector("#navbar__list").children; // put list items in an array to change the styling
     // console.log(listItems);
     for (let i = 0; i < sections.length; i++) {
         let sec = sections[i].getBoundingClientRect();
@@ -66,6 +68,19 @@ function toggleActiveState() {
         }
     }
 }
+
+for (let i = 0; i < listItems.length; i++) {
+   listItems[i].addEventListener('click', function scrollToSection(event) {
+        event.preventDefault();
+        console.log(event.target.getAttribute("href"));
+        // let value;
+        if (event.target.nodeName === 'LI' | event.target.nodeName === 'A') {
+            // value = event.target.getAttribute("href");   
+            sections[i].scrollIntoView({behavior: "smooth", block: "center"});
+        }
+});    
+}
+
 /**
  * End Global Variables
  * Start Helper Functions
