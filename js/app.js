@@ -40,23 +40,10 @@ window.addEventListener('scroll',toggleActiveState);
 const listItems = document.querySelector("#navbar__list").children; // put list items in an array to change the styling
 
 function toggleActiveState() {
-    // let sec1 = sections[0];
-    // let port1 = sec1.getBoundingClientRect();
-    // console.log(port1.top);
-    // if (port1.top < 100 & port1.top > -350) {
-    //     console.log("here");
-    //     sec1.style.backgroundColor = "orange";
-    // }
-    // else
-    // {
-    //     sec1.style.backgroundColor = "";
-    // }
-    // console.log(listItems);
+
     for (let i = 0; i < sections.length; i++) {
         let sec = sections[i].getBoundingClientRect();
         if (sec.top < 150 & sec.top > -300) {
-            // sections[i].style.backgroundColor = "orange";
-            console.log("here "+i);
             sections[i].classList.remove("your-active-class");
             sections[i].classList.add("selected-section");
             listItems[i].classList.add("selected-section");
@@ -72,12 +59,7 @@ function toggleActiveState() {
 for (let i = 0; i < listItems.length; i++) {
    listItems[i].addEventListener('click', function scrollToSection(event) {
         event.preventDefault();
-        console.log(event.target.getAttribute("href"));
-        // let value;
-        // if (event.target.nodeName === 'LI' | event.target.nodeName === 'A') {
-            // value = event.target.getAttribute("href");   
-            sections[i].scrollIntoView({behavior: "smooth", block: "center"});
-        // }
+        sections[i].scrollIntoView({behavior: "smooth", block: "center"});
 });    
 }
 
