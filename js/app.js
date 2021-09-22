@@ -23,19 +23,22 @@ const navBar = document.querySelector("#navbar__list"); // select nav bar
 
 const fragment = document.createDocumentFragment();
 
-for (let i = 1; i <= sections.length; i++) {
+for (let i = 0; i < sections.length; i++) {
     const createList = document.createElement("li"); // create a list item
     const createAnchor = document.createElement("a");
-    createAnchor.textContent = "Section"+i;
+    createAnchor.textContent = sections[i].getAttribute("data-nav");
     createAnchor.style.color = "black";
-    createAnchor.setAttribute("href","#section"+i);
+    createAnchor.setAttribute("href","#"+sections[i].getAttribute("id"));
     createList.insertAdjacentElement("afterbegin",createAnchor);
     fragment.appendChild(createList);           
 }
 
 navBar.appendChild(fragment);
 
-
+window.addEventListener('scroll',toggleActiveState);
+function toggleActiveState() {
+    
+}
 /**
  * End Global Variables
  * Start Helper Functions
