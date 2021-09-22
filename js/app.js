@@ -37,7 +37,26 @@ navBar.appendChild(fragment);
 
 window.addEventListener('scroll',toggleActiveState);
 function toggleActiveState() {
-    
+    // let sec1 = sections[0];
+    // let port1 = sec1.getBoundingClientRect();
+    // console.log(port1.top);
+    // if (port1.top < 100 & port1.top > -350) {
+    //     console.log("here");
+    //     sec1.style.backgroundColor = "orange";
+    // }
+    // else
+    // {
+    //     sec1.style.backgroundColor = "";
+    // }
+    for (let i = 0; i < sections.length; i++) {
+        let sec = sections[i].getBoundingClientRect();
+        if (sec.top < 100 & sec.top > -350) {
+            sections[i].style.backgroundColor = "orange";
+        }    
+        else{
+            sections[i].style.backgroundColor = "";
+        }
+    }
 }
 /**
  * End Global Variables
