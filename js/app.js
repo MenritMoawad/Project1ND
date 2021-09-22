@@ -17,19 +17,23 @@
  * Define Global Variables
  * 
 */
-const sectionsNum = document.querySelectorAll("section"); // array of sections
+const sections = document.querySelectorAll("section"); // array of sections
 const navBar = document.querySelector("#navbar__list"); // select nav bar
 
-const createAnchor = document.createElement("a");
 
-const createList = document.createElement("li"); // create a list item
-createAnchor.textContent = "hello";
-createAnchor.style.color = "black";
-createAnchor.setAttribute("href","#section1");
-createList.insertAdjacentElement("afterbegin",createAnchor);
-navBar.appendChild(createList);
+const fragment = document.createDocumentFragment();
 
-console.log(sectionsNum.length);
+for (let i = 1; i <= sections.length; i++) {
+    const createList = document.createElement("li"); // create a list item
+    const createAnchor = document.createElement("a");
+    createAnchor.textContent = "Section"+i;
+    createAnchor.style.color = "black";
+    createAnchor.setAttribute("href","#section"+i);
+    createList.insertAdjacentElement("afterbegin",createAnchor);
+    fragment.appendChild(createList);           
+}
+
+navBar.appendChild(fragment);
 
 
 /**
