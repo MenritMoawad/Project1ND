@@ -17,7 +17,19 @@
  * Define Global Variables
  * 
 */
-var sectionsNum = document.querySelectorAll("section");
+const sectionsNum = document.querySelectorAll("section"); // array of sections
+const navBar = document.querySelector("#navbar__list"); // select nav bar
+
+const createAnchor = document.createElement("a");
+
+const createList = document.createElement("li"); // create a list item
+createAnchor.textContent = "hello";
+createAnchor.style.color = "black";
+createAnchor.setAttribute("href","#section1");
+createList.insertAdjacentElement("afterbegin",createAnchor);
+navBar.appendChild(createList);
+
+console.log(sectionsNum.length);
 
 
 /**
