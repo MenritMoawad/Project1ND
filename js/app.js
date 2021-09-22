@@ -48,13 +48,21 @@ function toggleActiveState() {
     // {
     //     sec1.style.backgroundColor = "";
     // }
+    const listItems = document.querySelector("#navbar__list").children; // put list items in an array to change the styling
+    // console.log(listItems);
     for (let i = 0; i < sections.length; i++) {
         let sec = sections[i].getBoundingClientRect();
-        if (sec.top < 100 & sec.top > -350) {
-            sections[i].style.backgroundColor = "orange";
+        if (sec.top < 150 & sec.top > -300) {
+            // sections[i].style.backgroundColor = "orange";
+            console.log("here "+i);
+            sections[i].classList.remove("your-active-class");
+            sections[i].classList.add("selected-section");
+            listItems[i].classList.add("selected-section");
         }    
         else{
-            sections[i].style.backgroundColor = "";
+            sections[i].classList.add("your-active-class");
+            sections[i].classList.remove("selected-section");
+            listItems[i].classList.remove("selected-section");
         }
     }
 }
