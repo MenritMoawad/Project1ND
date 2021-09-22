@@ -135,6 +135,11 @@ section:nth-of-type(even) .landing__container {
     margin-left: auto;
     text-align: right; 
 }
+@media (max-width: 600px ){
+    #navbar__list li{
+       display: block;
+    }
+}
 
 /* Background Circles */
 /* Note that background circles are created with psuedo elements before and after */

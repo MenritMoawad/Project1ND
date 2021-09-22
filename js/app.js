@@ -74,10 +74,10 @@ for (let i = 0; i < listItems.length; i++) {
         event.preventDefault();
         console.log(event.target.getAttribute("href"));
         // let value;
-        if (event.target.nodeName === 'LI' | event.target.nodeName === 'A') {
+        // if (event.target.nodeName === 'LI' | event.target.nodeName === 'A') {
             // value = event.target.getAttribute("href");   
             sections[i].scrollIntoView({behavior: "smooth", block: "center"});
-        }
+        // }
 });    
 }
 
